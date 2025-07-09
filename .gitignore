@@ -1,0 +1,51 @@
+### Gradle ###
+.gradle/
+build/
+.gradle-cache/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+### Logs & Reports ###
+*.log
+test-results/
+test-report/
+reports/
+
+### IntelliJ IDEA ###
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+### Eclipse ###
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+bin/
+
+### NetBeans ###
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### OS Specific ###
+.DS_Store
+Thumbs.db
+
+### Env files ###
+.env
+*.local
+
+### Swap / Temp files ###
+*.swp
+*.swo

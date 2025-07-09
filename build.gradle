@@ -1,0 +1,85 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    ext {
+        serenityVersion = '3.6.12'
+        serenityGradleVersion = '3.6.12'
+    }
+    dependencies {
+        classpath "net.serenity-bdd:serenity-gradle-plugin:$serenityGradleVersion"
+        classpath "net.serenity-bdd:serenity-single-page-report:$serenityVersion"
+    }
+}
+
+plugins {
+    id 'java'
+    id 'net.serenity-bdd.serenity-gradle-plugin' version '4.2.16'
+    id "org.sonarqube" version "6.0.1.5171"
+}
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+group = 'io.github.aleblanco'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+dependencies {
+    implementation "net.serenity-bdd:serenity-core:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-junit:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-cucumber:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay-rest:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-ensure:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:$serenityVersion"
+
+    testImplementation 'io.github.bonigarcia:selenium-jupiter:4.3.3'
+    testImplementation 'io.github.bonigarcia:webdrivermanager:5.6.4'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.assertj:assertj-core:3.23.1'
+    testImplementation 'org.hamcrest:hamcrest-core:2.2'
+    implementation 'ch.qos.logback:logback-classic:1.5.13'
+    testImplementation 'io.rest-assured:json-schema-validator:5.1.1'
+
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.google.zxing:core:3.5.2'
+    implementation 'com.google.zxing:javase:3.5.2'
+    implementation 'org.apache.commons:commons-lang3:3.14.0'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.14'
+    implementation 'com.eatthepath:java-otp:0.4.0'
+
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+    testCompileOnly 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+}
+
+test {
+    systemProperty "cucumber.filter.tags", System.getProperty("cucumber.filter.tags")
+    systemProperty "cucumber.options", System.getProperty("cucumber.options")
+}
+
+tasks.withType(Test).configureEach {
+    systemProperty "serenity.outputDirectory", "target/site/serenity"
+    systemProperty "serenity.project.name", "Mi Proyecto de Pruebas"
+}
+
+serenity {
+    testRoot = "io.github.aleblanco.runners"
+    requirementsDir = "src/test/resources/features"
+    reports = ["single-page-html"]
+}
+
+gradle.startParameter.continueOnFailure = true
+test.finalizedBy(aggregate, reports)

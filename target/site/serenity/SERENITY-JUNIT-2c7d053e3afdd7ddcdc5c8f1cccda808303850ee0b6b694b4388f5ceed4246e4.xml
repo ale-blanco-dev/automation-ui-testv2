@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Reqres API Testing" skipped="0" tests="15" time="19.54" timestamp="2025-07-08 08:51:33"><testcase name="Get list users"/><testcase name="Get single user"/><testcase name="Get single user not found"/><testcase name="Get list of resources"/><testcase name="Get single resource"/><testcase name="Get single resource not found"/><testcase name="Get delayed response"/><testcase name="Create a user &lt;name&gt; with valid data"/><testcase name="Register a user &lt;email&gt;"/><testcase name="Login attempt"/><testcase name="Update user &lt;name&gt;"/><testcase name="Delete user"><failure message="&#13;&#10;Expected: &lt;204&gt;&#13;&#10;     but: was &lt;200&gt;" type="java.lang.AssertionError">&#13;
+Expected: &lt;204&gt;&#13;
+     but: was &lt;200&gt;</failure><system-err>&#13;
+Expected: &lt;204&gt;&#13;
+     but: was &lt;200&gt;&#13;
+io.github.aleblanco.stepdefinitions.api.reqres.TestingApiStepDefinition.theResponseStatusCodeShouldBe(TestingApiStepDefinition.java:25)&#13;
+✽.the response status code should be 204(file:///C:/Users/ALEJO%20BLANCO/Documents/Dev%20Projects/ale_blanco_dev/IdeaProjects/automation-ui-testv2/src/test/resources/features/api/reqres/testing_api.feature:84)&#13;
+</system-err></testcase></testsuite>
