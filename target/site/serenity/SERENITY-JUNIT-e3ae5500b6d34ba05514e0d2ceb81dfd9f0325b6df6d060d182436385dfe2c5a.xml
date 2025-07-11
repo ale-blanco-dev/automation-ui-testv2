@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Login validation" skipped="0" tests="4" time="17.44" timestamp="2025-03-27 08:16:17"><testcase name="Login attempt with user"/><testcase name="Successful login"/><testcase name="Failure login"><failure message="&#13;&#10;Expected: is &lt;true&gt;&#13;&#10;     but: was &lt;false&gt;" type="java.lang.AssertionError">&#13;
-Expected: is &lt;true&gt;&#13;
-     but: was &lt;false&gt;</failure><system-err>&#13;
-    Expected: is &lt;true&gt;&#13;
-    but: was &lt;false&gt;&#13;
-    io.github.aleblanco.stepdefinitions.web.ecommerce.LoginStepDefinitions.theyShouldBeLoggedInSuccessfully(LoginStepDefinitions.java:29)&#13;
-    ✽.they should be logged in
-    successfully(file:///C:/Users/ALEJO%20BLANCO/Documents/ale_blanco_dev/IdeaProjects/automation-ui-testv2/src/test/resources/features/login.feature:33)&#13;
-</system-err></testcase></testsuite>

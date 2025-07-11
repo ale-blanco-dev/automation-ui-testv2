@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Login validation" skipped="0" tests="4" time="26.75" timestamp="2025-04-27 10:07:25"><testcase name="Login attempt outcome based on user type"/><testcase name="Login attempt outcome based on incorrect password"/><testcase name="Logout attempt outcome"/></testsuite>
